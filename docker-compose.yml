@@ -1,35 +1,41 @@
 services:
-
   db:
     image: mysql:8.4
-
     restart: always
-
     environment:
       MYSQL_DATABASE: clinic
       MYSQL_USER: clinic
       MYSQL_PASSWORD: clinic123
       MYSQL_ROOT_PASSWORD: root123
-
     ports:
       - "3306:3306"
-
     volumes:
       - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot123"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
 
   web:
     build: .
-
-    command: python backend/manage.py runserver 0.0.0.0:8000
-
+    command: sh -c "python backend/manage.py migrate && python backend/manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/app
-
     ports:
       - "8000:8000"
-
+    environment:
+      - SECRET_KEY=django-insecure-tudz-@f)2bczs9t%7tm!29$!uag3mgc0dknhcjl@)%e2%m_1ho
+      - DEBUG=True
+      - ALLOWED_HOSTS=*
+      - DB_NAME=clinic
+      - DB_USER=clinic
+      - DB_PASSWORD=clinic123
+      - DB_HOST=db
+      - DB_PORT=3306
     depends_on:
-      - db
+      db:
+        condition: service_healthy
 
 volumes:
   mysql_data:
