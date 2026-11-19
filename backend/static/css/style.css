@@ -1,0 +1,14 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Página inicial */
+.home-container {
+    background-color: #ffffff;
+}
+
+/* Página de login */
+.login-container {
+    background-color: rgb(255, 255, 255);
+}
