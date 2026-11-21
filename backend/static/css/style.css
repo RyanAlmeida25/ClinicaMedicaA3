@@ -4,6 +4,7 @@
     margin: 0;
     list-style: none;
     text-decoration: none;
+    
 }
 
 body {
@@ -15,12 +16,13 @@ header {
     height: 50px;
     background: linear-gradient(90deg, #86a7f5, #b285fa);
     display: block;
+    justify-content: flex-end;
 }
 
 
 header .inner_header {
     display: block;
-    max-width: 80%;
+    max-width: 95%;
     width: 1500px;
     height: 100%;
     margin: 0 auto;
@@ -32,6 +34,7 @@ header .logo {
     height: 100%;
     display: table;
     float: left;
+    margin-right: auto;
 }
 
 header .logo .h1_logo {
@@ -52,7 +55,11 @@ header .logo .h1_logo span {
 
 header .navigation {
     text-align: center;
+    float: left;
+    margin-left: 170px;
 }
+
+
 
 
 header .navigation nav {
@@ -64,11 +71,155 @@ header .navigation nav li {
     justify-content: center;
     margin: 0 auto;
     vertical-align: center;
-    line-height: 45px;
-    padding: 0px 20px;
+    line-height: 50px;
+    padding: 0px 12px;
+
+}
+header .nav-links li a {
+    color: white;
+    font-family: 'Montserrat';
+    padding: 10px;
+    font-size: 18px;
+    white-space: nowrap;
+    
 }
 
 header .nav-links li a:hover{
-    background-color: rgb(0, 30, 197);
+    color: rgba(0, 30, 197, 0.822);
 }
 
+
+header .btn_header {
+    float: right;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header .btn_header button {
+    padding: 6px 12px;
+    cursor: pointer;
+    margin-left: 8px;
+    white-space: nowrap;
+}
+
+header .btn_header .btn_agendamento {
+    background-color: #ffffff;
+    color: #6a5acd;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.25s ease;
+}
+
+header .btn_header .btn_agendamento:hover {
+    background-color: #f3efff;
+    color: #4b38b3;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.22);
+}
+
+header .btn_header .btn_agendamento:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+
+header .btn_header .btn_login {
+    background-color: #4b38b3;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 18px;
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    border-radius: 25px;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.25s ease;
+}
+
+header .btn_header .btn_login:hover {
+    background-color: #372694;
+    border-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.22);
+}
+
+header .btn_header .btn_login:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1000px) {
+    header {
+        height: auto; /* Permite o header crescer conforme os itens quebram */
+        padding: 15px 0;
+    }
+
+    header .inner_header {
+        width: 95%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    header .logo,
+    header .navigation,
+    header .btn_header {
+        float: none; /* Remove o float no celular */
+        margin-left: 0;
+        line-height: normal;
+        height: auto;
+    }
+
+    header .logo .h1_logo {
+        font-size: 24px;
+        display: block;
+    }
+
+    header .navigation nav li {
+        line-height: normal;
+        padding: 5px 8px;
+    }
+
+    header .nav-links li a {
+        font-size: 14px;
+        padding: 4px;
+    }
+
+    header .btn_header {
+        display: flex;
+        gap: 8px;
+    }
+}
