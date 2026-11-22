@@ -9,6 +9,10 @@ def home(request):
 def login_medico(request):
     return render(request, 'login_medico.html')
 
+def login(request):
+    return render(request, 'login.html')
+
+
 
 # Cadastro
 
