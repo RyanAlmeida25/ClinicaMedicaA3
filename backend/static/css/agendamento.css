@@ -1,0 +1,174 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 40px;
+    padding-bottom: 50px;
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #e6fdff,
+        #acfffb
+    );
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 25px;
+    left: 35px;
+}
+
+header .logo {
+    height: 100%;
+    display: flex;
+}
+
+header .logo .span {
+    font-weight: 800;
+}
+.logo a {
+    text-decoration: none; 
+    color: inherit;
+}
+
+
+.container {
+    width: 500px;
+    padding: 30px 40px;
+
+    color: #161616;
+
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.945);
+    backdrop-filter: blur(100px);
+
+    box-shadow:
+        rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px,
+        rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px,
+        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+.container h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+
+.input {
+    width: 100%;
+    margin: 18px 0;
+}
+
+
+.input label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.input input,
+.input select {
+    width: 100%;
+    height: 50px;
+
+    padding: 0 15px;
+
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+
+    background: transparent;
+
+    outline: none;
+
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.input input::placeholder {
+    color: #7e7e7e;
+}
+
+
+.row {
+    display: flex;
+    gap: 15px;
+}
+
+.row .input {
+    flex: 1;
+}
+
+
+button {
+    width: 100%;
+    height: 50px;
+
+    margin-top: 15px;
+
+    border: none;
+    border-radius: 40px;
+
+    cursor: pointer;
+
+    background-color: #414ce9;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    transition: all 0.2s ease;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: rgb(87, 161, 247);
+    transform: scale(1.05);
+}
+
+.input input:focus,
+.input select:focus {
+
+    background-color: white;
+
+    border: 2px solid #67dff0;
+
+    box-shadow: 0 0 10px rgba(103, 223, 240, 0.5);
+
+    transition: 0.2s ease;
+}
+
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 95%;
+        padding: 25px;
+    }
+
+    .row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+}
