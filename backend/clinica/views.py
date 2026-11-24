@@ -6,8 +6,8 @@ from .models import *
 def home(request):
     return render(request, 'home.html')
 
-def login_medico(request):
-    return render(request, 'login_medico.html')
+def agendamento(request):
+    return render(request, 'agendamento.html')
 
 def login(request):
     return render(request, 'login.html')

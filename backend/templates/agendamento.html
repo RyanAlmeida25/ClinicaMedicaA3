@@ -1,0 +1,157 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/agendamento.css' %}">
+    <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap"
+    rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="style.css">
+
+    <title>Agendamento Clínico</title>
+
+
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+             <a href="{% url 'home' %}"><h1>Health<span class ="span">ONE</span></h1></a>
+        </div>
+    </header>
+
+
+    <div class="container">
+
+        <h1>Agendar Consulta</h1>
+
+        <form method="POST">
+
+        {% csrf_token %}
+
+
+        <div class="input">
+            <label for="nome">Nome Completo</label>
+            <input
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Digite seu nome completo"
+                required>
+        </div>
+
+        <div class="input">
+            <label for="nascimento">Data de Nascimento</label>
+            <input
+                type="date"
+                id="nascimento"
+                name="nascimento"
+                required>
+        </div>
+        <div class="input">
+
+            <label for="telefone">
+                Telefone
+            </label>
+
+            <input
+                type="tel"
+                id="telefone"
+                name="telefone"
+                placeholder="(11) 99999-9999"
+                maxlength="15"
+                required>
+
+        </div>
+
+
+        <div class="input">
+            <label for="especialidade">Especialidade</label>
+
+            <select
+                id="especialidade"
+                name="especialidade"
+                required>
+
+                <option value="">Selecione uma especialidade</option>
+
+                <option value="Cardiologia">Cardiologia</option>
+                <option value="Dermatologia">Dermatologia</option>
+                <option value="Pediatria">Pediatria</option>
+                <option value="Neurologia">Neurologia</option>
+                <option value="Ginecologia">Ginecologia</option>
+                <option value="Ortopedia">Ortopedia</option>
+                <option value="Clinico Geral">Clínico Geral</option>
+
+            </select>
+        </div>
+
+
+        <div class="input">
+
+            <label for="dia">Dia da Semana</label>
+
+            <select
+                id="dia"
+                name="dia"
+                required>
+
+                <option value="">Selecione um dia</option>
+
+                <option value="Segunda-feira">Segunda-feira</option>
+                <option value="Terça-feira">Terça-feira</option>
+                <option value="Quarta-feira">Quarta-feira</option>
+                <option value="Quinta-feira">Quinta-feira</option>
+                <option value="Sexta-feira">Sexta-feira</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="input">
+
+            <label for="horario">Horário da Consulta</label>
+
+            <select
+                id="horario"
+                name="horario"
+                required>
+
+                <option value="">Selecione um horário</option>
+
+                <option value="08:00">08:00</option>
+                <option value="09:00">09:00</option>
+                <option value="10:00">10:00</option>
+                <option value="11:00">11:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+                <option value="17:00">17:00</option>
+
+            </select>
+
+        </div>
+
+
+        <button type="submit">
+            Agendar Consulta
+        </button>
+
+        </form>
+
+    </div>
+
+    <script src="{% static 'js/agendamento.js' %}"></script>
+</body>
+</html>
+            
