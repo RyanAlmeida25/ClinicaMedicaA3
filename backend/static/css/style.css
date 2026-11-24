@@ -14,9 +14,13 @@ body {
 header {
     width: 100%;
     height: 50px;
+
     background: linear-gradient(90deg, #86a7f5, #b285fa);
-    display: block;
-    justify-content: flex-end;
+
+    position: fixed;
+    top: 0;           
+    left: 0;          
+    z-index: 1000;    
 }
 
 
@@ -160,7 +164,9 @@ header .btn_header .btn_login:active {
 }
 
 
-
+main {
+    padding-top: 80px;
+}
 
 
 
@@ -222,4 +228,230 @@ header .btn_header .btn_login:active {
         display: flex;
         gap: 8px;
     }
+}
+
+
+
+
+.hero {
+    max-width: 1400px;
+    margin: 70px auto;
+    padding: 0 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content h2 {
+    font-family: 'Montserrat';
+    font-size: 52px;
+    color: #3d3d3d;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-family: 'Montserrat';
+    font-size: 20px;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    background: linear-gradient(90deg, #86a7f5, #b285fa);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 30px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+.hero-btn:hover {
+    transform: translateY(-3px);
+}
+
+.hero-image img {
+    width: 500px;
+    max-width: 100%;
+}
+
+
+.especialidades {
+    max-width: 1400px;
+    margin: 120px auto;
+    padding: 0 5%;
+}
+
+.especialidades h2 {
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 40px;
+    margin-bottom: 50px;
+    color: #3d3d3d;
+}
+
+.especialidades-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 25px;
+}
+
+.card-especialidade {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,.1);
+
+    transition: .3s;
+}
+
+.card-especialidade:hover {
+    transform: translateY(-5px);
+}
+
+.card-especialidade h3 {
+    color: #6a5acd;
+    font-family: 'Montserrat';
+    margin-bottom: 10px;
+}
+
+.card-especialidade p {
+    color: #666;
+    font-family: 'Montserrat';
+    line-height: 1.6;
+}
+
+
+
+.beneficios {
+    max-width: 1400px;
+    margin: 120px auto;
+    padding: 0 5%;
+}
+
+.beneficios h2 {
+    text-align: center;
+    font-family: 'Montserrat';
+
+    font-size: 40px;
+
+    margin-bottom: 50px;
+}
+
+.beneficios-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.beneficio {
+    background: white;
+
+    width: 300px;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,.1);
+}
+
+.beneficio h3 {
+    margin-bottom: 15px;
+    color: #6a5acd;
+    font-family: 'Montserrat';
+}
+
+.beneficio p {
+    font-family: 'Montserrat';
+    color: #666;
+}
+
+
+
+.cta {
+    text-align: center;
+
+    margin: 120px auto;
+
+    padding: 80px 20px;
+
+    max-width: 1000px;
+
+    background: linear-gradient(
+        90deg,
+        #86a7f5,
+        #b285fa
+    );
+
+    border-radius: 20px;
+}
+
+.cta h2 {
+    color: white;
+    font-size: 40px;
+    font-family: 'Montserrat';
+    margin-bottom: 20px;
+}
+
+.cta p {
+    color: white;
+    font-family: 'Montserrat';
+    margin-bottom: 30px;
+}
+
+.cta-btn {
+    background: white;
+
+    color: #6a5acd;
+
+    border: none;
+
+    padding: 15px 25px;
+
+    border-radius: 30px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+#inicio,
+#especialidades,
+#sobre,
+#contato {
+    scroll-margin-top: 80px;
 }
